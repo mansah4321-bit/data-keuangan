@@ -1,0 +1,6 @@
+{
+  "name": "SI KEUANGAN KEMAHASANTRIAN",
+  "description": "Sistem Informasi Pengelolaan RAB dan Realisasi Pengeluaran Divisi Kemahasantrian MA'HAD ALY AL FURQON MAGELANG",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

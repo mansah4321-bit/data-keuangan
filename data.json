@@ -1,0 +1,39 @@
+{
+  "rab": [
+    {
+      "id": "RAB-2026-09-001",
+      "bulan": 9,
+      "tahun": 2026,
+      "kode": "G101",
+      "kategori": "Keasramaan",
+      "kegiatan": "Keasramaan",
+      "anggaran": 78888,
+      "keterangan": "Anggaran awal keasramaan"
+    }
+  ],
+  "pengeluaran": [],
+  "danaMasuk": [],
+  "kategori": [
+    {
+      "kode": "G101",
+      "kategori": "Keasramaan",
+      "status": "Aktif",
+      "deskripsi": "Kegiatan keasramaan dan kebersihan asrama",
+      "subKategori": [
+        "Keasramaan"
+      ]
+    }
+  ],
+  "settings": {
+    "googleScriptUrl": "https://script.google.com/macros/s/AKfycbwi8TrxALjmbY_C8qzepYP86_gEm-WmpXTCu3PNhwunlfk1-O0pKb4QkpVBeBOcGI2o/exec",
+    "sheetId": "",
+    "institutionName": "MA'HAD ALY AL FURQON MAGELANG",
+    "subDivision": "DIVISI KEMAHASANTRIAN",
+    "address": "Jl. Srikandi No. 1, Tempuran, Magelang, Jawa Tengah 56161",
+    "bendaharaName": "Ust. Muhammad Rizqi, S.Ag.",
+    "mudirName": "Ust. Ahmad Zainuri, Lc., M.H.",
+    "academicYear": "1447-1448 H / 2026-2027 M",
+    "autoSync": false,
+    "lastSyncTime": ""
+  }
+}

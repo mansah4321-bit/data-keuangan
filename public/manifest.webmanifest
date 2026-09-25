@@ -1,0 +1,22 @@
+{
+  "name": "SI KEUANGAN KEMAHASANTRIAN",
+  "short_name": "SI Keuangan",
+  "description": "Sistem Informasi Pengelolaan RAB dan Realisasi Pengeluaran Divisi Kemahasantrian Ma’had Aly Al-Furqoon Magelang",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f8fafc",
+  "theme_color": "#064e3b",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect width='192' height='192' rx='40' fill='%23064e3b'/><path d='M96 36 L154 68 L154 124 L96 156 L38 124 L38 68 Z' fill='none' stroke='%2334d399' stroke-width='8'/><text x='96' y='110' font-family='sans-serif' font-size='50' font-weight='800' fill='%23ffffff' text-anchor='middle'>SI</text></svg>",
+      "sizes": "192x192",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><rect width='512' height='512' rx='100' fill='%23064e3b'/><path d='M256 96 L410 180 L410 332 L256 416 L102 332 L102 180 Z' fill='none' stroke='%2334d399' stroke-width='20'/><text x='256' y='295' font-family='sans-serif' font-size='130' font-weight='800' fill='%23ffffff' text-anchor='middle'>SI</text></svg>",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    }
+  ]
+}
