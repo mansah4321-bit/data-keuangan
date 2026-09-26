@@ -65,7 +65,7 @@ async function createServer() {
         }
       ],
       settings: {
-        "googleScriptUrl": "https://script.google.com/macros/s/AKfycbwi8TrxALjmbY_C8qzepYP86_gEm-WmpXTCu3PNhwunlfk1-O0pKb4QkpVBeBOcGI2o/exec",
+        "googleScriptUrl": "https://script.google.com/macros/s/AKfycbx2ihJJGgx6zBYknOuQCJdgAsn7WhH4LY9ROH1N0z6Db4sNfgfwyDK16F-knuST_DMY/exec",
         "sheetId": "",
         "institutionName": "MA'HAD ALY AL FURQON MAGELANG",
         "subDivision": "DIVISI KEMAHASANTRIAN",
