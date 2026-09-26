@@ -109,6 +109,17 @@ async function createServer() {
     res.json({ success });
   });
 
+  app.get('/api/download-gas-html', (req, res) => {
+    const filePath = path.resolve(__dirname, 'dist', 'index.html');
+    if (fs.existsSync(filePath)) {
+      res.setHeader('Content-disposition', 'attachment; filename=index.html');
+      res.setHeader('Content-type', 'text/html');
+      res.sendFile(filePath);
+    } else {
+      res.status(404).send('File index.html belum terbuat. Silakan jalankan build terlebih dahulu di panel developer.');
+    }
+  });
+
   // Vite integration
   if (!isProd) {
     const { createServer: createViteServer } = await import('vite');

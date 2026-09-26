@@ -45,7 +45,7 @@ export const INITIAL_CATEGORIES: KategoriItem[] = [
 ];
 
 export const INITIAL_SETTINGS: AppSettings = {
-  googleScriptUrl: 'https://script.google.com/macros/s/AKfycbx2ihJJGgx6zBYknOuQCJdgAsn7WhH4LY9ROH1N0z6Db4sNfgfwyDK16F-knuST_DMY/exec',
+  googleScriptUrl: 'https://script.google.com/macros/s/AKfycbwJDgMOviWSuwa-0JuC0pKHO2ta4XR3aThO5SXmqE5up0Rb5W7nE2uX9OR848EMCzSO/exec',
   sheetId: '',
   institutionName: "MA'HAD ALY AL FURQON MAGELANG",
   subDivision: 'DIVISI KEMAHASANTRIAN',

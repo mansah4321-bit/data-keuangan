@@ -395,6 +395,24 @@ export const SettingsModal: React.FC = () => {
             </button>
           </div>
 
+          {/* Export to Google Apps Script (GAS HTML) */}
+          <div className="pt-2 border-t border-slate-100 dark:border-violet-950 space-y-2">
+            <span className="text-[11px] font-bold text-slate-600 dark:text-violet-300 uppercase tracking-wider block">
+              Publikasi via Google Apps Script (Web App)
+            </span>
+            <p className="text-[10px] text-slate-500 dark:text-violet-400 leading-relaxed">
+              Unduh aplikasi keuangan ini sebagai file HTML tunggal untuk di-deploy langsung di Apps Script Anda!
+            </p>
+            <a
+              href="/api/download-gas-html"
+              download="index.html"
+              className="w-full py-2 bg-gradient-to-r from-teal-600 to-emerald-600 hover:from-teal-500 hover:to-emerald-500 text-white text-xs font-bold rounded-xl shadow-xs transition flex items-center justify-center space-x-1.5 active:scale-95 cursor-pointer"
+            >
+              <Download className="w-3.5 h-3.5" />
+              <span>Unduh HTML Tunggal untuk Apps Script</span>
+            </a>
+          </div>
+
           {/* Submit */}
           <div className="pt-2 flex items-center space-x-2 border-t border-slate-100 dark:border-violet-950">
             <button
