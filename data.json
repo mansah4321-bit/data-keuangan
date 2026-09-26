@@ -1,16 +1,5 @@
 {
-  "rab": [
-    {
-      "id": "RAB-2026-09-001",
-      "bulan": 9,
-      "tahun": 2026,
-      "kode": "G101",
-      "kategori": "Keasramaan",
-      "kegiatan": "Keasramaan",
-      "anggaran": 78888,
-      "keterangan": "Anggaran awal keasramaan"
-    }
-  ],
+  "rab": [],
   "pengeluaran": [],
   "danaMasuk": [],
   "kategori": [
@@ -20,7 +9,39 @@
       "status": "Aktif",
       "deskripsi": "Kegiatan keasramaan dan kebersihan asrama",
       "subKategori": [
-        "Keasramaan"
+        "Kerja Bakti Pa",
+        "Apresiasi Santri Teladan Pa",
+        "Apresiasi Keaktifan Bhs Arab Pa",
+        "Bersih Bersih Musholla Warga",
+        "Kesehatan Putra",
+        "Sabun cuci piring Pa",
+        "Porstek & HCL Pa"
+      ]
+    },
+    {
+      "kode": "G102",
+      "kategori": "Bimbingan Konseling",
+      "status": "Aktif",
+      "deskripsi": "Bimbingan dan konseling santri",
+      "subKategori": ["Bimkos"]
+    },
+    {
+      "kode": "G104",
+      "kategori": "Ekstrakurikuler",
+      "status": "Aktif",
+      "deskripsi": "Kegiatan ekstrakurikuler santri",
+      "subKategori": ["TPA", "Futsal"]
+    },
+    {
+      "kode": "G105",
+      "kategori": "Takmir",
+      "status": "Aktif",
+      "deskripsi": "Operasional takmir dan masjid",
+      "subKategori": [
+        "Khotib",
+        "Tisu Masjid",
+        "Air minum (asatidzah dan khotib)",
+        "Lakban masjid"
       ]
     }
   ],
@@ -34,6 +55,6 @@
     "mudirName": "Ust. Ahmad Zainuri, Lc., M.H.",
     "academicYear": "1447-1448 H / 2026-2027 M",
     "autoSync": false,
-    "lastSyncTime": "07.03"
+    "lastSyncTime": ""
   }
 }
