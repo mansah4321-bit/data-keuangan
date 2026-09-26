@@ -298,62 +298,42 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => 
   // Centralized Server-side and LocalStorage Synchronization
   const isInitialServerSync = useRef(true);
 
-  // 1. Load initial data from server database on startup
+  // 1. Load initial data from Google Sheets on startup
   useEffect(() => {
     const loadFromServer = async () => {
-      try {
-        const res = await fetch('/api/data');
-        if (res.ok) {
-          const data = await res.json();
-          if (data) {
-            if (Array.isArray(data.rab)) {
-              setRawRabList(data.rab);
+      const activeUrl = settings.googleScriptUrl || INITIAL_SETTINGS.googleScriptUrl;
+      let loadedFromGoogle = false;
+
+      if (activeUrl) {
+        try {
+          const res = await fetchFromGoogleSheets(activeUrl);
+          if (res.success && res.data) {
+            if (Array.isArray(res.data.rab)) {
+              setRawRabList(res.data.rab);
             }
-            if (Array.isArray(data.pengeluaran)) {
-              setPengeluaranList(data.pengeluaran);
+            if (Array.isArray(res.data.pengeluaran)) {
+              setPengeluaranList(res.data.pengeluaran);
             }
-            if (Array.isArray(data.danaMasuk)) {
-              setDanaMasukList(data.danaMasuk);
+            if (Array.isArray(res.data.danaMasuk)) {
+              setDanaMasukList(res.data.danaMasuk);
             }
-            if (Array.isArray(data.kategori) && data.kategori.length > 0) {
-              setKategoriList(data.kategori);
+            if (Array.isArray(res.data.kategori) && res.data.kategori.length > 0) {
+              setKategoriList(res.data.kategori);
             }
-            if (data.settings && typeof data.settings === 'object' && Object.keys(data.settings).length > 0) {
-              setSettings((prev) => ({ ...prev, ...data.settings }));
-            }
+            loadedFromGoogle = true;
+            console.log('Successfully loaded initial database from Google Sheets on startup.');
+          } else {
+            console.warn('Failed to load initial data from Google Sheets, using LocalStorage fallback. Error:', res.message);
           }
+        } catch (err) {
+          console.warn('Failed to connect to Google Sheets on startup:', err);
         }
-      } catch (err) {
-        console.warn('Failed to load initial database from local Express server:', err);
-      } finally {
-        isInitialServerSync.current = false;
       }
+
+      isInitialServerSync.current = false;
     };
     loadFromServer();
   }, []);
-
-  // 2. Automatically sync all modifications to server-side database with debounce
-  useEffect(() => {
-    if (isInitialServerSync.current) return;
-
-    const syncData = {
-      rab: rawRabList,
-      pengeluaran: pengeluaranList,
-      danaMasuk: danaMasukList,
-      kategori: kategoriList,
-      settings: settings
-    };
-
-    const delayDebounceFn = setTimeout(() => {
-      fetch('/api/data', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(syncData),
-      }).catch((err) => console.warn('Express database write failed:', err));
-    }, 500);
-
-    return () => clearTimeout(delayDebounceFn);
-  }, [rawRabList, pengeluaranList, danaMasukList, kategoriList, settings]);
 
   // Calculate Realisasi, Sisa, and Status automatically for each RAB item
   const rabList = useMemo<RABItem[]>(() => {
@@ -880,13 +860,8 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => 
   };
 
   // Auto-sync effect: Automatically push local changes to Google Sheets in real-time
-  const isInitialMount = useRef(true);
-
   useEffect(() => {
-    if (isInitialMount.current) {
-      isInitialMount.current = false;
-      return;
-    }
+    if (isInitialServerSync.current) return;
     if (!settings.googleScriptUrl) return;
 
     const timer = setTimeout(() => {
@@ -905,7 +880,7 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => 
       }).catch((e) => {
         console.warn('Auto-push to Google Sheets failed:', e);
       });
-    }, 500);
+    }, 1000);
 
     return () => clearTimeout(timer);
   }, [rawRabList, pengeluaranList, danaMasukList, kategoriList, settings.googleScriptUrl]);
